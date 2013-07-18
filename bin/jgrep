@@ -1,0 +1,9 @@
+require 'jgrep'
+
+query_string = ARGV[0]
+
+unless STDIN.tty?
+  document = STDIN.read.chomp
+end
+
+JGrep.jgrep(document, query_string)

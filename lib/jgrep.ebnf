@@ -1,0 +1,72 @@
+tokens
+------
+
+:function
+
+described by name({constant|lookup|functions})
+
+results in token
+{:type => :function,
+ :params => [array of tokens]
+ :name => the function name}
+
+:lookup
+
+described by location in json document
+
+reults in token
+{:type => :lookup,
+ :value => location in json document}
+
+:constant
+
+described by string|integer|float
+
+results in token
+{:type => :constant,
+ :value => value of the constant}
+
+:coperator (Comparison Operator)
+
+described by =|>|<|>=|<=|=~|!=
+
+results in token
+{:type => :loperator,
+ :value => the string value of the operator}
+
+* note that == gets translated into = at parse time
+
+:loperator (Logical Operator)
+
+described by and|or
+
+results in token
+{:type => :loperator,
+ :value => the string value of the operator}
+
+* Note : Consider material implication, XOR, NAND, NOR
+
+:uoperator (Unary operators)
+
+described by !
+
+results in token
+{:type => :uoperator,
+ :value => string value of the unary operator}
+
+:paren (Parenthesis)
+
+described by (|)
+
+results in token
+{:type => :paren,
+ :value => string value of the parenthesis}
+
+
+
+Expressions
+-----------
+
+Defined as
+
+
